@@ -26,10 +26,10 @@ public class MybatisConfig {
     SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
     sessionFactory.setDataSource(dataSource);
     sessionFactory.setTypeAliasesPackage("com.louis.kitty.*.model");	// 扫描Model
-    
+
 	PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-	sessionFactory.setMapperLocations(resolver.getResources("classpath*:**/sqlmap/*.xml"));	// 扫描映射文件
-	
+	sessionFactory.setMapperLocations(resolver.getResources("classpath*:mapper/*.xml"));	// 扫描映射文件
+
     return sessionFactory.getObject();
   }
 }
